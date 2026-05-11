@@ -9,48 +9,62 @@ import SwiftUI
 
 struct AccountCardView: View {
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: 0) {
             
             // 모든 계좌 보기
             HStack {
                 Image(systemName: "creditcard.fill")
                     .foregroundStyle(.blue)
+                    .font(.title3)
                 Text("모든 계좌 보기")
                     .font(.headline)
                 Spacer()
                 Image(systemName: "chevron.right")
                     .foregroundStyle(.secondary)
+                    .font(.subheadline)
             }
+            .padding()
+             
+            // 캐시백
+            HStack(spacing: 12) {
+                Image(systemName: "wonsign.circle.fill")
+                    .foregroundStyle(.blue)
+                    .font(.title2)
+                
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("5번")
+                        .font(.headline)
+                    Text("받을 수 있는 캐시백")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
+                
+                Spacer()
+                
+                Button("받기") { }
+                    .buttonStyle(.bordered)
+            }
+            .padding()
             
             Divider()
+                .padding(.horizontal)
             
-            // 5월에 쓴 돈
+            // 하단 탭 메뉴
             HStack {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("924,166원")
-                        .font(.title2).bold()
-                    Text("5월에 쓴 돈")
+                ForEach(["계좌", "대출", "카드"], id: \.self) { item in
+                    Text(item)
+                        .font(.subheadline)
                         .foregroundStyle(.secondary)
+                    Divider()
+                        .frame(height: 12)
                 }
                 Spacer()
-                Button("내역") {}
-                    .buttonStyle(.bordered)
+                Text("모두보기")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
             }
-            
-            //카드값
-            HStack {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("2,003,592원")
-                        .font(.title2).bold()
-                    Text("2일 뒤 나갈 카드값")
-                        .foregroundStyle(.secondary)
-                }
-                Spacer()
-                Button("내역") {}
-                    .buttonStyle(.bordered)
-            }
+            .padding()
         }
-        .padding()
         .background(.white)
         .clipShape(RoundedRectangle(cornerRadius: 16))
     }
