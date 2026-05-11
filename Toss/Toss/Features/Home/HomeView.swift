@@ -11,8 +11,9 @@ struct HomeView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 12) {
+                HiddenMoneyBannerView()
                 AccountCardView()
-                CashbackBannerView()
+                SpendingCardView()
             }
             .padding(.horizontal)
         }
