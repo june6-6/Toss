@@ -11,7 +11,7 @@ struct HomeView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 12) {
-                Text("홈")
+                AccountCardView()
             }
             .padding(.horizontal)
         }
