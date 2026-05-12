@@ -15,7 +15,7 @@ struct SpendingCardView: View {
             HStack {
                 VStack(alignment: .leading, spacing: 4) {
                     Text("924,116원")
-                        .font(.title2).bold()
+                        .font(.title3).bold()
                     Text("5월에 쓴 돈")
                         .foregroundStyle(.secondary)
                 }
@@ -29,7 +29,7 @@ struct SpendingCardView: View {
             HStack {
                 VStack(alignment: .leading, spacing: 4) {
                     Text("2,003,592원")
-                        .font(.title2).bold()
+                        .font(.title3).bold()
                     Text("2일 뒤 나갈 카드값")
                         .foregroundStyle(.secondary)
                 }
